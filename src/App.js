@@ -8,7 +8,7 @@ const App = () =>{
             <h2>To Do List</h2>
         </div>
         <div id="page-content"><ToDoList /></div>
-        <div id="page-footer"></div>
+        <div id="page-footer"><h2>CN Week 5 Handin To Do List || Tom Hankinson</h2></div>
 
     </div>
     )
@@ -61,7 +61,7 @@ const ToDoList = () =>{
                 
               <div className="boxFlex"> 
                 <button onClick={() => removeListItem(index)} 
-                key={index}>remove item</button>
+                key={index}>Remove Item</button>
               </div>
 
             </div>)} )}

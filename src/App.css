@@ -84,6 +84,9 @@ h1, h2, h3, h4, h5, p{
 
 
 #page-footer{
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   height: 15vh;
   background-color: rgb(49, 49, 49);
 
