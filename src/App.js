@@ -15,12 +15,13 @@ const App = () =>{
 }
 
 const ToDoList = () =>{
-  // the input
+  // empty list for input to be held
   const [list, setList] = useState([]);
+  // input stored here
   const [inputText, setInputText] = useState('');
-  // the list
+ 
   
-
+  // this submits the item
   const submitList = (event) => {
     event.preventDefault();
     let newListItem = [...list];
@@ -28,7 +29,7 @@ const ToDoList = () =>{
     setList(newListItem)
     
   };
-
+    // this removes the item
     const removeListItem = (index) =>{
       let ListItem = [...list]
       ListItem.splice(index, 1)
@@ -62,7 +63,7 @@ const ToDoList = () =>{
                 <button onClick={() => removeListItem(index)} 
                 key={index}>remove item</button>
               </div>
-              
+
             </div>)} )}
           </div>
         <div>
