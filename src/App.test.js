@@ -1,8 +1,19 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+// test('renders header', () => {
+//   render(<App />);
+//   const element = screen.getAllByText(/List/i);
+//   expect(element.length).toBe(3);
+// });
+
+test('renders submit buttonwa', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  const element = screen.getByRole("button")
+  expect(element).toBeInTheDocument();
 });
+test('input check', () =>{
+  const input = screen.getByText(/Add to Do item/i)
+  fireEvent.change(input, {target: {value: "hello world"}})
+  expect(input.value).toBe("hello world")
+})

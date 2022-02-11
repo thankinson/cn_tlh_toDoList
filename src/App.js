@@ -8,7 +8,7 @@ const App = () =>{
             <h2>To Do List</h2>
         </div>
         <div id="page-content"><ToDoList /></div>
-        <div id="page-footer"><h2>CN Week 5 Handin To Do List || Tom Hankinson</h2></div>
+        <div id="page-footer"><h4>CN Week 5 Handin To Do List || Tom Hankinson</h4></div>
 
     </div>
     )
@@ -38,6 +38,7 @@ const ToDoList = () =>{
  
   return (
       <div id="the-list">
+        
         <div id="list-Input">
         <h3>The List</h3>
         <form onSubmit={submitList}>
@@ -51,27 +52,32 @@ const ToDoList = () =>{
                 </div>
           </form>
           </div>
-            <div id="div-line">{list.map((list, index) => { 
+          
+          <div id="div-line"></div>
+            
+            <div id="lineItem">{list.map((list, index) => { 
               return (
               <div id="lineItem">
               
-              <div>
-                <p>{list}</p>
-              </div>
+                <div id="listedItems">
+                  <p>{list}</p>
+                </div>
+                  
+                <div id="button-list-div"> 
+                    <button>Done</button>
+                    <button onClick={() => removeListItem(index)} key={index}>Remove Item</button>
+                </div>
+                <div id="div-line"></div>
+              </div>)})}
+
                 
-              <div className="boxFlex"> 
-                <button onClick={() => removeListItem(index)} 
-                key={index}>Remove Item</button>
-              </div>
+            </div>
+  
+  </div>
+  )}
 
-            </div>)} )}
-          </div>
-        <div>
+export default App;
 
-        </div>
-      </div>
-  )
-}
 
 
 
@@ -92,7 +98,3 @@ const ToDoList = () =>{
 //   )
 
 // }
-
-
-
-export default App;
