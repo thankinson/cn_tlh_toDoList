@@ -1,10 +1,11 @@
 import React, { useState } from "react"
 
+
 const App = () =>{
     return (
       <div id="main-container">
         <div id="page-header">
-            <h1>CN Week 5 Handin</h1>
+            <h1>CN Week 5 Coursework</h1>
             <h2>To Do List</h2>
         </div>
         <div id="page-content"><ToDoList /></div>
@@ -19,6 +20,12 @@ const ToDoList = () =>{
   const [list, setList] = useState([]);
   // input stored here
   const [inputText, setInputText] = useState('');
+
+
+  const [disable, setDisable] =useState(true);
+  // const checkBoxTick = () => {
+  //   setDisable(!disable)
+  // }
  
   
   // this submits the item
@@ -42,7 +49,7 @@ const ToDoList = () =>{
         <div id="list-Input">
         <h3>The List</h3>
         <form onSubmit={submitList}>
-                <input type="text" d
+                <input type="text" 
                   placeholder="Add to Do item" 
                   required value={inputText} 
                   onChange={(event) => setInputText(event.target.value)}> 
@@ -64,8 +71,9 @@ const ToDoList = () =>{
                 </div>
                   
                 <div id="button-list-div"> 
-                    <button>Done</button>
-                    <button onClick={() => removeListItem(index)} key={index}>Remove Item</button>
+                    
+                    <label for="chekBox">Tick if done</label><input type="checkbox" id="checkBox" onChange={()=> setDisable(!disable) } />
+                    <button disabled={disable} onClick={() => removeListItem(index)} key={index}>Remove Item</button>
                 </div>
                 <div id="div-line"></div>
               </div>)})}
